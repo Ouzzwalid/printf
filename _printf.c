@@ -37,6 +37,7 @@ int _printf(const char *format, ...)
 				print_percent(&printed_chars);
 			else
 			{
+				print_percent(&printed_chars);
 				write(1, format, 1);
 				printed_chars++;
 			}
