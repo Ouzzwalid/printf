@@ -35,6 +35,8 @@ int _printf(const char *format, ...)
 				print_string(&specifier, &printed_chars);
 			else if (*format == '%')
 				print_percent(&printed_chars);
+			else if (*format == 'd' || *format == 'i')
+				print_integer(&specifier, &printed_chars);
 			else
 			{
 				print_percent(&printed_chars);

@@ -63,3 +63,25 @@ void print_percent(int *printed_chars)
 	write(1, "%", 1);
 	(*printed_chars)++;
 }
+/**
+ *print_integer - prints an integer
+ *@specifier: pointer to the specifier given in the _printf function
+ *@printed_chars: number of printed chars;
+ */
+void print_integer(spec *specifier, int *printed_chars)
+{
+	int integer = va_arg(specifier->args, int);
+	int len;
+	char buffer[100]; /*Max digits is 10*/
+    if (integer == INT_MIN)
+    {
+        write(1,"-2147483648", 11);
+        *printed_chars += 11;
+        return;
+    }
+	intToString(integer, buffer);
+	len = _strlen(buffer);
+	write(1, buffer, len);
+	*printed_chars += len;
+}
+

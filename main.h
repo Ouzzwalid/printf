@@ -18,4 +18,7 @@ void print_char(spec *specifier, int *printed_chars);
 void print_string(spec *specifier, int *printed_chards);
 void print_percent(int *printed_chars);
 int _strlen(char *s);
+void print_integer(spec *specifier, int *printed_chars);
+void intToString(int, char *);
+void reverseString(char *str);
 #endif
